@@ -82,3 +82,4 @@ C:\Users\linfe\source\repos\WebApplication1\WebApplication1\obj\Debug\gameaway.c
 C:\Users\linfe\source\repos\WebApplication1\WebApplication1\obj\Debug\gameaway.csproj.CopyComplete
 C:\Users\linfe\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\linfe\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\linfe\source\repos\WebApplication1\WebApplication1\bin\HttpAuthModule.dll

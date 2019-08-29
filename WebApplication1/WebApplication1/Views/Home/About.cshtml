@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<style>
+    .aboutimg {
+        height: 60vh;
+        min-height: 500px;
+        background-image: url('../../img/camera-coffee-composition-1509428.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay-div{
+       height:60vh;
+       min-height: 500px;
+       width: 100%;
+       position:absolute;
+       background-color:#000;
+       opacity:.7;
+    }
+
+    .setsizeimg{
+        max-height:100px;
+        max-width:100px;
+    }
+    .showcase .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+    }
+    .showcase .showcase-text {
+    padding: 7rem;
+    }
+
+    .showcase .showcase-text {
+    padding: 3rem;
+    }
+</style>
+<div class="aboutimg">
+    <div class="overlay-div"></div> <!-- the new div -->
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <p class="lead text-white"></p>
+                <h1 class="font-weight-light text-white ">About Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../../img/startup.jpg');"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Fully Responsive Design</h2>
+                <p class="lead mb-0">GAway is a web platform designed for parents to know more about video game addiction. Video games have the power to take control over a child's life. This platform will assist the parents of kids to know more about different signs of video game addiction in kids, the causes and effects of video game addiction. It also provides a list of activities which parents can do to reduce the effects of video game addiction in their kids.</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 text-white showcase-img" style="background-image: url('../../img/beverage.jpg');"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>Our mission</h2>
+                <p class="lead mb-0">At GAway, our mission is to:</p>
+                <p class="lead mb-0">
+                    - Highlight early signs of video game addiction in kids
+                </p>
+                <p class="lead mb-0">
+                    - Show causes and effects of video game addiction
+                </p>
+                <p class="lead mb-0">- Suggest activities parents should do with their kids to keep them away from video games</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+

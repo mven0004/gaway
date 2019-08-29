@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Statistics about Video Game";
+}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<style>
+    .aboutimg {
+        height: 60vh;
+        min-height: 500px;
+        background-image: url('../../img/informationbg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay-div {
+        height: 60vh;
+        min-height: 500px;
+        width: 100%;
+        position: absolute;
+        background-color: #000;
+        opacity: .7;
+    }
+
+    .setsizeimg {
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    .chart {
+        width: 100%;
+        min-height: 300px;
+        /*border: 1px solid #969696;*/
+    }
+
+    .showcase .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+    }
+    .showcase .showcase-text {
+    padding: 7rem;
+    }
+
+    .showcase .showcase-text {
+    padding: 3rem;
+    }
+</style>
+<div class="aboutimg">
+    <div class="overlay-div"></div> <!-- the new div -->
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <p class="lead text-white">Video Game Addiction</p>
+                <h1 class="font-weight-light text-white ">Know more about video game addiction</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="page-section" id="services" style="padding-top:40px;background-color:#f8f9fa">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Statistics</h2>
+                <h3 class="section-subheading text-muted"></h3>
+            </div>
+        </div>
+        <div class="row text-center" style="padding-top:20px; padding-bottom:30px">
+            <div class="col-md-4">
+                <h4 class="service-heading">Usage by different age groups</h4>
+                <p class="text-muted">
+                Usage of video games by kids between <b>age 5 and 14</b> is very high in the last few years. <b>More than 80% </b>kids play game regularly. 
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="service-heading">Game time with Age</h4>
+                <p class="text-muted">
+                    An average child spends around <b>70 min per day</b> playing
+                    video games.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="service-heading">Recommended guidelines</h4>
+                <p class="text-muted">
+                    <b>Very few </b>percentage of <b>kids between 9-12 years</b> old satisfy recommended physical activity
+                    and screen time guidelines.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div id="chart_gamerPercentAgeGroup_div" class="chart col-lg-6 order-lg-2"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Percentage of Gamer within Age Groups</h2>
+                <p class="lead mb-0"><b>More than 80%</b> of kids with <b>age between 5 and 14</b> years old play video games on a regular basis.</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div id="chart_avg_gametime_div" class="chart col-lg-6"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>Game Time for Different Age Groups</h2>
+                <p class="lead mb-0">On an average, a child in <b>age group 5 to 14</b> can spend around <b>70 mins per day</b> playing video games. 
+                <b>Recommended</b> total screen time is <b>120 minutes</b> by AIHW. Around 60% of daily recommended sccreen time is spent in gaming. </p>
+            </div>
+        </div>
+       <div class="row no-gutters">
+            <div id="chart_meet_guideline_div" class="chart col-lg-6 order-lg-2"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Physical Activity and Screen Time Guideline</h2>
+                <p class="lead mb-0"><b>Only 30% </b>of children in <b>age group 9-12 years</b> meet recommended daily screen time, 
+                <b>less than 20%</b> meet the recommended <b>physical activity*</b> and only around <b>5% met both criteria</b> as defined by AIHW.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/inforScript.js"></script>

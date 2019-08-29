@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .homeimg {
+      height: 100vh;
+      min-height: 500px;
+      background-image: url('../../img/sackcloth-1280539_1920.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+</style>
+<div class="homeimg">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <p class="lead text-white" ><b>Welcome To GAway</b></p>
+                <h1 class="font-weight-light text-white ">How can we help you today?</h1>
+                <div class="col-md-12 col-lg-8 col-xl-7 mx-auto">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-3 mb-2 mb-md-0">
+                                <label class="input-group-text" for="inputGroupSelect01">I want to know</label>
+                            </div>
+                            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                                <select class="custom-select col-12" id="inputGroupSelect01">
+                                    <option selected value="#">-Please Select-</option>
+                                    <!--- <option value="~//Home/Cause">know the causes of VPG</option>-->
+                                    <option value="~/Home/InformationOfVGA">statistics about video game usage</option>
+                                    <!--  <option value="~/Home/StepsOfSolve">know the steps to solve VPG</option> -->
+                                    <option value="~/Home/QuizTest">early signs of video game addiction</option>
+                                </select>
+                                </div>
+                                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                                    <button type="button" class="btn btn-block btn-group-sm btn-primary" onclick="chooseweb()">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function chooseweb() {
+            var select = document.querySelector('select');
+            window.location.href = select.value;
+        }
+    </script>

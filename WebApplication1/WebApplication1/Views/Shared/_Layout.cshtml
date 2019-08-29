@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GAawy.Team</title>
+    <link rel="icon" href="../../img/GAway.png" type="image/gif" sizes="16x16">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="padding-bottom:0px">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top py-3 ">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="../../img/GAway.png" width="30" height="30" class="d-inline-block align-top" alt="">@Html.ActionLink("GAway", "Index", "Home", new { area = "" }, new { @class = "navbar-brand"  })</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" >
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link active" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Quiz", "QuizTest", "Home", new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Statistics", "InformationOfVGA", "Home", new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+            @Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })
+        </li>
+                    <li class="nav-item">
+                        @*@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })*@
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid " style="padding-right: 0px; padding-left: 0px;">
+        @RenderBody()
+        <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year GAway. 900 Dandenong Rd, Caulfield East VIC 3145 | All Rights Reserved</p>
+            </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <style>
+        .navbar { 
+          -webkit-transition:padding 0.2s ease;
+          -moz-transition:padding 0.2s ease; 
+          -o-transition:padding 0.2s ease;        
+          transition:padding 0.2s ease;
+                }
+
+        .nav-link {
+          color: white !important;
+                 }
+
+        .navbar-brand {
+          color: white !important;
+                 }
+        .navbar-toggler-icon{
+          color: white !important;
+        }
+        .navbar-toggler
+        {
+          color: white !important;
+        }
+        .affix {
+          padding-top: 0.2em !important;
+          padding-bottom: 0.2em !important;
+          -webkit-transition:padding 0.2s linear;
+          -moz-transition:padding 0.2s linear;  
+          -o-transition:padding 0.2s linear;         
+          transition:padding 0.2s linear;  
+          background: #4e9aab;
+        }
+
+        section {
+            min-height:calc(100% - 70px);
+        }
+    </style>
+    <script>
+        $(window).scroll(function() {
+          /* affix after scrolling 50px */
+          if ($(document).scrollTop() > 50) {
+            $('.navbar').addClass('affix');
+          } else {
+            $('.navbar').removeClass('affix');
+          }
+        });
+    </script>
+</body>
+</html>
