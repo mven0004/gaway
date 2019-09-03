@@ -4,6 +4,7 @@
 }
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <style>
     .aboutimg {
         height: 60vh;
@@ -46,6 +47,7 @@
     padding: 3rem;
     }
 </style>
+
 <div class="aboutimg">
     <div class="overlay-div"></div> <!-- the new div -->
     <div class="container h-100">
@@ -57,6 +59,7 @@
         </div>
     </div>
 </div>
+
 <section class="page-section" id="services" style="padding-top:40px;background-color:#f8f9fa">
     <div class="container">
         <div class="row">
@@ -91,30 +94,145 @@
 </section>
 
 <section class="showcase">
-    <div class="container-fluid p-0">
-        <div class="row no-gutters">
+    <div class="container">
+        <div class="row mb-3">
             <div id="chart_gamerPercentAgeGroup_div" class="chart col-lg-6 order-lg-2"></div>
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Percentage of Gamer within Age Groups</h2>
+                <h3>Percentage of Gamer within Age Groups</h3>
                 <p class="lead mb-0"><b>More than 80%</b> of kids with <b>age between 5 and 14</b> years old play video games on a regular basis.</p>
             </div>
         </div>
-        <div class="row no-gutters">
+        <div class="row mb-3">
             <div id="chart_avg_gametime_div" class="chart col-lg-6"></div>
             <div class="col-lg-6 my-auto showcase-text">
-                <h2>Game Time for Different Age Groups</h2>
+                <h3>Game Time for Different Age Groups</h3>
                 <p class="lead mb-0">On an average, a child in <b>age group 5 to 14</b> can spend around <b>70 mins per day</b> playing video games. 
                 <b>Recommended</b> total screen time is <b>120 minutes</b> by AIHW. Around 60% of daily recommended sccreen time is spent in gaming. </p>
             </div>
         </div>
-       <div class="row no-gutters">
+       <div class="row mb-3">
             <div id="chart_meet_guideline_div" class="chart col-lg-6 order-lg-2"></div>
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Physical Activity and Screen Time Guideline</h2>
+                <h3>Physical Activity and Screen Time Guideline</h3>
                 <p class="lead mb-0"><b>Only 30% </b>of children in <b>age group 9-12 years</b> meet recommended daily screen time, 
                 <b>less than 20%</b> meet the recommended <b>physical activity*</b> and only around <b>5% met both criteria</b> as defined by AIHW.</p>
             </div>
         </div>
     </div>
 </section>
-<script src="~/Scripts/inforScript.js"></script>
+
+<script type="text/javascript">
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawGamerPercentAgeGroupChart);
+    google.charts.setOnLoadCallback(drawAvgGameTimeByYear);
+    google.charts.setOnLoadCallback(drawRecommendActivity);
+
+    // When browser window is resized, redraw all the charts
+    window.onresize = function () {
+        drawGamerPercentAgeGroupChart();
+        drawAvgGameTimeByYear();
+        drawRecommendActivity();
+    }
+
+    function drawGamerPercentAgeGroupChart() {
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Age Group');
+        data.addColumn('number', '2015');
+        data.addColumn('number', '2017');
+        data.addColumn('number', '2019');
+        data.addRows([
+            ["1-4", 0.39, 0.36, 0.25],
+            ["5-14", 0.91, 0.9, 0.81],
+            ["15-24", 0.84, 0.82, 0.83],
+            ["25-34", 0.85, 0.75, 0.75],
+            ["35-44", 0.76, 0.69, 0.63]
+        ]);
+
+        var options = {
+            title: 'Percentage of Gamer Within Each Group',
+            titleTextStyle: { bold: false, fontSize: 18 },
+            colors: ["#ef5255", "#e1e7e7", "#07abcc"],
+            fontName: 'Roboto',
+            chartArea: { left: 60, top: 50, width: '90%', height: '75%' },
+            legend: { position: 'in', alignment: 'end' },
+            animation: { startup: true, duration: 2000 },
+            hAxis: { title: 'Age Group' },
+            vAxis: { format: 'percent', gridlines: { color: 'white' } }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_gamerPercentAgeGroup_div'));
+        chart.draw(data, options);
+
+        // var chart = new google.charts.Bar(document.getElementById('chart_gamerPercentAgeGroup_div'));
+        // chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+
+    function drawAvgGameTimeByYear() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', "Age Group");
+        data.addColumn('number', "2015");
+        data.addColumn('number', "2017");
+        data.addColumn('number', "2019");
+        data.addRows([
+            ["1-4", 45, 25, 82.5],
+            ["5-14", 91, 86.5, 71.5],
+            ["15-24", 117, 120.5, 105.5],
+            ["25-34", 92.5, 99.5, 91.5],
+            ["35-44", 80, 82.5, 75]
+        ]);
+
+        var options = {
+            title: 'Daily Average Game Time by Age Groups',
+            titleTextStyle: { bold: false, fontSize: 18 },
+            fontName: 'Roboto',
+            colors: ["#ef5255", "#e1e7e7", "#07abcc"],
+            pointSize: 5,
+            curveType: 'function',
+            chartArea: { left: 60, top: 50, width: '90%', height: '75%' },
+            //animation: { startup: true, duration: 2000, easing: 'linear' },
+            legend: { position: 'in', alignment: 'end' },
+            vAxis: { title: "Duration (mins)", gridlines: { color: 'white' } },
+            hAxis: { title: "Age Group" }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_avg_gametime_div'));
+        chart.draw(data, options);
+
+        // Instantiate and draw our chart, passing in some options.
+        // var chart = new google.charts.Line(document.getElementById('chart_avg_gametime_div'));
+        // chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+    function drawRecommendActivity() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', "Recommendation");
+        data.addColumn('number', "Age 5-8");
+        data.addColumn('number', "9-12");
+        data.addColumn('number', "13-14");
+        data.addColumn('number', "15-17");
+        data.addRows([
+            ["Physical activity", 0.36, 0.18, 0.12, 0.06],
+            ["Screen time", 0.43, 0.3, 0.24, 0.2],
+            ["Both guidelines", 0.2, 0.07, 0.05, 0.02]
+        ]);
+
+        var options = {
+            title: 'Percentage of Children who Met Physical Activity and Screen Time Guideline',
+            titleTextStyle: { fontSize: 18, bold: false },
+            colors: ["#e1e7e7", "#ef5255", "#e1e7e7", "#e1e7e7"],
+            fontName: 'Roboto',
+            chartArea: { left: 60, top: 50, width: '90%', height: '75%' },
+            legend: { position: 'in', alignment: 'end' },
+            animation: { startup: true, duration: 2000, easing: 'linear' },
+            hAxis: { title: 'Met Recommendation Guideline' },
+            vAxis: { format: 'percent', gridlines: { color: 'white' } }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_meet_guideline_div'));
+        chart.draw(data, options);
+    }
+</script>
