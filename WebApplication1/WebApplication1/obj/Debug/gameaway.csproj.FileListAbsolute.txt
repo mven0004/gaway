@@ -168,3 +168,7 @@ C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\o
 C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\bin\HttpAuthModule.dll
+C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\khmer_000\Source\Repos\mven0004\gaway\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
