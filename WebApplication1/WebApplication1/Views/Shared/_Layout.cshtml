@@ -23,9 +23,17 @@
                     <li class="nav-item">
                         @Html.ActionLink("Quiz", "QuizTest", "Home", new { @class = "nav-link" })
                     </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Statistics", "InformationOfVGA", "Home", new { @class = "nav-link" })
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Problems
+                        </a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Excessive Screen Time", "ScreenTime", "Home", new { @class = "dropdown-item" })
+                            @Html.ActionLink("Game Time", "GameTime", "Home", new { @class = "dropdown-item" })
+                        </div>
                     </li>
+
                     <li class="nav-item">
                         @Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })
                     </li>

@@ -40,10 +40,13 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult InformationOfVGA()
+        public ActionResult ScreenTime()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult GameTime()
+        {
             return View();
         }
 

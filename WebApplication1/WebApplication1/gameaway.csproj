@@ -168,6 +168,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\arrow-up.png" />
     <Content Include="img\beverage.jpg" />
     <Content Include="img\GAway.png" />
     <Content Include="img\logo.jpg" />
@@ -256,9 +257,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Cause.cshtml" />
     <Content Include="Views\Home\StepsOfSolve.cshtml" />
-    <Content Include="Views\Home\InformationOfVGA.cshtml" />
+    <Content Include="Views\Home\ScreenTime.cshtml" />
     <Content Include="Views\Home\QuizTest.cshtml" />
     <Content Include="Views\Home\sent.cshtml" />
+    <Content Include="Views\Home\GameTime.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
