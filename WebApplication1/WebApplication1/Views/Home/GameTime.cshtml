@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Game Time - Interaction Graph";
+    ViewBag.Title = "Game Time - Interaction Graphs";
 }
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -9,7 +9,7 @@
     .aboutimg {
         height: 60vh;
         min-height: 500px;
-        background-image: url('../../img/informationbg.jpg');
+        background-image: url('../../img/game-time-banner.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -39,9 +39,8 @@
         background-size: cover;
     }
 
-    .call-action {
-        width: 160px;
-        margin-top: 1em;
+    .custom-control-label a {
+        cursor: pointer;
     }
 </style>
 
@@ -74,9 +73,9 @@
             <div class="col-md-4">
                 <div class="card shadow p-3 bg-white rounded h-100">
                     <div class="card-body">
-                        <h4 class="service-heading">Game and Psycological Wellbeing</h4>
+                        <h4 class="service-heading">Game and Psychological Well-being</h4>
                         <p class="text-muted">
-                            A research study in Britain suggested that children play <strong>video game within one hour</strong> can have positive effect on their psycological wellbeing. 
+                            A research study in Britain suggested that children play <strong>video game within one hour</strong> can have positive effect on their psychological well-being.
                             However, on average, most children aged 5-14 spend <strong>around 81 mins</strong> playing game daily.
                         </p>
                     </div>
@@ -87,7 +86,7 @@
                     <div class="card-body">
                         <h4 class="service-heading">Online Game and Bullying</h4>
                         <p class="text-muted">
-                            Online games with multiplayer are very popular among young Australians aged 8-17 years old. 
+                            Online games with multiplayer are very popular among young Australians aged 8-17 years old.
                             Roughly, an estimated <b>17% or more than 200,000</b> young gamers experienced in-game bullying.
                         </p>
                     </div>
@@ -97,13 +96,70 @@
     </div>
 </section>
 
+<!-- Modal: Casual Game -->
+<div class="modal fade" id="CasualGameInfo" tabindex="-1" role="dialog" aria-labelledby="CasualGame" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CasualGameInfo">Casual Game</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Casual game is normally played on mobile or tablet devices with short period of game time but with high frequency.
+                Casual game can be played from 5 to 20 minutes on a commute train for instance.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: In-depth Game -->
+<div class="modal fade" id="InDepthGameInfo" tabindex="-1" role="dialog" aria-labelledby="InDepthGame" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="InDepthGameInfo">In-depth Game</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                In-depth came is played on gaming devices such as gaming console and PC in which players spend longer time per session. 
+                Players typically spend around 1 hour to 2 hours for an in-depth gaming session.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section class="showcase">
     <div class="container">
+        @* Bullying Percentage Chart *@
+        <div class="row mb-3 mt-3 pb-3 border-bottom">
+            <div id="BullyingPercentChart" class="chart col-lg-6"></div>
+            <div class="col-lg-6 pt-3">
+                <h3>Bullying Prevalence in Australia</h3>
+                <p class="lead mb-0">
+                    The <strong>highest instances of online-game bullying</strong> happened to gamers aged between 
+                        <strong>11 and 12 years old</strong> accounting for <strong>22%</strong> in 12 months to June 2017. In addition, 
+                    we saw <strong>positive correlation between bullying and gamer age</strong> represented by the 
+                           <strong>red line</strong> on the chart.
+                </p>
+            </div>
+        </div>
+
+        @* Interactive Graphs *@
         <div class="row mb-3 mt-3">
             @* Option Control Section *@
             <div class="col-md-4">
-                <div class="card bg-light h-100">
-                    <div class="card-header font-weight-bold">Options</div>
+                <div class="card bg-light">
+                    <div class="card-header font-weight-bold">Interactive Charts - Filter Options</div>
                     <div class="card-body">
                         <!-- Age Group Section -->
                         <div class="row font-weight-bold pl-3">Age Group</div>
@@ -147,18 +203,18 @@
                                 <input type="radio" id="game_session_casual" name="rdb_game_session"
                                        class="custom-control-input"
                                        onchange="intraction_option_changed()">
-                                <label class="custom-control-label" for="game_session_casual" data-toggle="tooltip" data-placement="top"
-                                       title="Casual game is normally played on mobile devices with short period of game time but with high frequency. Casual game can be played between 5 minutes to 20 minutes on commute train for instance.">
-                                    Casual <img src="~/img/information-icon-16x16.png" />
+                                <label class="custom-control-label" for="game_session_casual">
+                                    Casual
+                                    <a data-toggle="modal" data-target="#CasualGameInfo" title="Click for more information!"><img src="~/img/information-icon-16x16.png" /></a>
                                 </label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="game_session_indepth" name="rdb_game_session"
                                        class="custom-control-input"
                                        onchange="intraction_option_changed()">
-                                <label class="custom-control-label" for="game_session_indepth" data-toggle="tooltip" data-placement="top"
-                                       title="In-depth came is played on other devices such as gaming console and PC in which players spends longer time per session. Player typically spends around 1 hour to 2 hours for in-depth gaming session.">
-                                    In depth <img src="~/img/information-icon-16x16.png" />
+                                <label class="custom-control-label" for="game_session_indepth">
+                                    In-depth 
+                                    <a data-toggle="modal" data-target="#InDepthGameInfo" title="Click for more information!"><img src="~/img/information-icon-16x16.png" /></a>
                                 </label>
                             </div>
                         </div>
@@ -214,12 +270,55 @@
     google.charts.load('current', { 'packages': ['corechart'] });
 
     // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawGameTime);
+    google.charts.setOnLoadCallback(drawBullyingPercentChart);
     google.charts.setOnLoadCallback(drawGamerPercentAgeGroupChart);
+    google.charts.setOnLoadCallback(drawGameTime);
 
     window.onresize = function () {
+        drawBullyingPercentChart();
         drawGameTime();
         drawGamerPercentAgeGroupChart();
+    }
+
+    function drawBullyingPercentChart() {
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Age');
+        data.addColumn('number', 'Percentage');
+        data.addRows([
+            [8 ,0.11],
+            [9 ,0.12],
+            [10,0.12],
+            [11,0.22],
+            [12,0.21],
+            [13,0.12],
+            [14,0.19],
+            [15,0.19],
+            [16,0.18],
+            [17,0.2 ]
+        ]);
+
+        var options = {
+            title: 'Prevalence of Bullying Amongst Game Players',
+            titleTextStyle: { bold: false, fontSize: 18 },
+            colors: ["#e1e7e7", "#ef5255" ],
+            fontName: 'Verdana',
+            chartArea: { left: 60, top: 50, width: '90%', height: '73%' },
+            //lengend: { position: 'in', alignment: 'end' },
+            hAxis: { title: 'Age', gridlines: { color: 'white' }, ticks: [8,9,10,11,12,13,14,15,16,17] },
+            vAxis: { format: 'percent', gridlines: { color: 'white' }, minValue: 0 }, 
+            trendlines: {
+                0: {
+                    type: 'linear',
+                    color: "#ef5255",
+                    opacity: 0.5,
+                    lineWidth: 3
+                }
+            }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('BullyingPercentChart'));
+        chart.draw(data, options);
     }
 
     function drawGamerPercentAgeGroupChart() {
@@ -299,9 +398,9 @@
             ["M", "1-4", "Both", 57, 38, 100, 60, '', getTooltipText()],
             ["M", "1-4", "Casual", 18, 7, 21, 60, '', getTooltipText()],
             ["M", "1-4", "In-depth", 39, 35, 79, 60, '', getTooltipText()],
-            ["M", "5-14", "Both", 112, 110, 81, 60, 'Recommened Game Time: 1h', getTooltipText()],
-            ["M", "5-14", "Casual", 28, 26, 20, 60, 'Recommened Game Time: 1h', getTooltipText()],
-            ["M", "5-14", "In-depth", 90, 80, 58, 60, 'Recommened Game Time: 1h', getTooltipText()],
+            ["M", "5-14", "Both", 112, 110, 81, 60, 'Recommended Game Time: 1h', getTooltipText()],
+            ["M", "5-14", "Casual", 28, 26, 20, 60, 'Recommended Game Time: 1h', getTooltipText()],
+            ["M", "5-14", "In-depth", 90, 80, 58, 60, 'Recommended Game Time: 1h', getTooltipText()],
             ["M", "15-24", "Both", 148, 156, 130, 60, '', getTooltipText()],
             ["M", "15-24", "Casual", 27, 33, 26, 60, '', getTooltipText()],
             ["M", "15-24", "In-depth", 118, 124, 118, 60, '', getTooltipText()],
@@ -314,9 +413,9 @@
             ["F", "1-4", "Both", 33, 12, 65, 60, '', getTooltipText()],
             ["F", "1-4", "Casual", 11, 7, 39, 60, '', getTooltipText()],
             ["F", "1-4", "In-depth", 20, 12, 22, 60, '', getTooltipText()],
-            ["F", "5-14", "Both", 70, 63, 62, 60, 'Recommened Game Time: 1h', getTooltipText()],
-            ["F", "5-14", "Casual", 24, 22, 17, 60, 'Recommened Game Time: 1h', getTooltipText()],
-            ["F", "5-14", "In-depth", 50, 50, 42, 60, 'Recommened Game Time: 1h', getTooltipText()],
+            ["F", "5-14", "Both", 70, 63, 62, 60, 'Recommended Game Time: 1h', getTooltipText()],
+            ["F", "5-14", "Casual", 24, 22, 17, 60, 'Recommended Game Time: 1h', getTooltipText()],
+            ["F", "5-14", "In-depth", 50, 50, 42, 60, 'Recommended Game Time: 1h', getTooltipText()],
             ["F", "15-24", "Both", 86, 85, 81, 60, '', getTooltipText()],
             ["F", "15-24", "Casual", 29, 22, 22, 60, '', getTooltipText()],
             ["F", "15-24", "In-depth", 60, 63, 59, 60, '', getTooltipText()],
@@ -452,7 +551,7 @@
     }
 
     function getTooltipText() {
-        return "Research in Britain suggested that video game has positive effect on " +
-            "children's psychological wellbeing. The recommended game time is one hour a day.";
+        return "A research in Britain suggested that video game has positive effect on " +
+            "children's psychological well-being. The recommended game time is one hour a day.";
     }
 </script>

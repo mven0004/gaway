@@ -170,9 +170,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="img\arrow-up.png" />
     <Content Include="img\beverage.jpg" />
+    <Content Include="img\educate-yourself-banner.jpg" />
+    <Content Include="img\game-time-banner.jpg" />
     <Content Include="img\GAway.png" />
+    <Content Include="img\information-icon-16x16.png" />
     <Content Include="img\logo.jpg" />
     <Content Include="img\minecraft.jpg" />
+    <Content Include="img\screen-time-banner.jpg" />
     <Content Include="img\startup.jpg" />
     <Content Include="img\static1.jpg" />
     <Content Include="img\computer.jpg" />
